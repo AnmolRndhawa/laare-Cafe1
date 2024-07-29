@@ -1,0 +1,203 @@
+/* HEADER BAAR CSS */
+/* HEADER BAAR CSS */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+:root{
+--primary_white: white;
+--creamy_white: #e4e6d9;
+--primary_black: black;
+--search_focus_width: 16rem;
+--header_outside_margin: 2rem;
+--logo_color: rgb(239, 191, 56);
+--header_menu_width: 20rem;
+
+}
+*,*::before, *::after{
+    box-sizing: border-box;
+
+}
+*{
+    
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    background-color: var(--primary_white);
+    background-color: var(--creamy_white);
+    /* background-color: purple; */
+    /* width:120vw; */
+}
+header{
+    z-index: 9999;
+    background-color: var(--creamy_white);
+    position: fixed;
+    height: 8svh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0px 4px 4px 0 rgb(57, 57, 57);
+
+}
+/* // header element 1 (logo)// */
+.headerlogo{
+    width: 3rem;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background: url(images_laare_cafe/laareCAFE_logo.png);
+    background-size: auto 170%;
+    background-position: center;
+}
+.header--elements:nth-child(1){
+    margin-left: var(--header_outside_margin);
+    
+}
+
+/* // header element 2 (searchbar)// */
+
+.header--elements:nth-child(2){
+    margin-right: auto;
+    border-radius: 0.8em;
+    border: 2px solid var(--primary_black);
+    
+}
+.header--elements:nth-child(2) *{
+    background:none;
+    color: var(--primary_black);
+    border: none;
+}
+.header--elements:nth-child(2) input{
+    width: 6.2rem;
+    outline: none;
+    margin-left: 1rem;
+    transition: 0.5s;
+}
+.header--elements:nth-child(2) input:focus{
+    width: var(--search_focus_width);
+
+  }
+.header--elements:nth-child(2) button img{
+    width: 2ch;
+    cursor: pointer;
+    transform: translate(5px, 2px);
+}
+
+/* // header element 3 (navlist)// */
+.header--elements:nth-child(3){
+    margin-left: auto;
+    margin-right:var(--header_outside_margin);
+}
+.header--nav nav .navlist{
+display: flex;
+gap: 2rem;
+list-style: none;
+
+}
+.navlist--links{
+ border: 1px solid var(--primary_black);
+ padding: 0.2rem 1em;
+ border-radius: 8em;
+ background: transparent;
+ 
+}
+.navlist--links:hover{
+   border: 1px solid var(--primary_black);
+   transition: 0.5s;
+}
+
+.navlist--links a{
+color: var(--primary_black);
+
+}
+
+.navlist--links:nth-child(3) a:hover:not(.header_menu a){
+    color: var(--mono-color);
+    
+}
+/* header menu  */
+     /* header menu  */
+     .navlist--links:nth-child(3):hover .header_menu{
+        display: block;
+
+     }
+    
+    .header_menu{
+        display: none;
+        position: absolute;
+        background-color: var( --mono-color);
+        width: var(--header_menu_width);
+
+        aspect-ratio: 1/0.6;
+        right: 2rem;
+        box-shadow: 4px 8px 20px 0 rgb(98, 98, 98);
+    }
+    .header_menu ul{
+       display: grid;
+       grid-template-rows: repeat(auto,1fr);
+       gap: 0.5rem;
+        list-style: none;
+        padding: 1rem;
+    }
+    .menu_items{
+        cursor: pointer;
+        padding: 0.3rem;
+        border: 2px solid var(--primary_black);
+        background-color: var(--creamy_white);
+        border-radius: 9px;
+        text-align: center;
+        
+    }
+    .menu_options:hover::before{
+        content: ">";
+        position: absolute;
+        transform: translateX(-1rem);
+        background-color: var(--logo_color);
+
+    }
+    .account_guides{
+        background: none;
+        user-select: none;
+        border: none;
+        padding: 0;
+        text-align: start;
+        font-size: 0.7em;
+    }
+
+
+/* // responsive //  */
+/* // responsive //  */
+@media (max-width: 650px){
+    header{
+        gap: 0.5rem;
+    }
+    
+    .header--elements:nth-child(1){
+        --header_outside_margin: 1rem;
+    }
+    .header--elements:nth-child(2) input{
+        font-size: 0.6em;
+        margin-left: 0.5rem;
+    }
+    .header--elements:nth-child(2) input:focus{
+        --search_focus_width: 8rem;
+    }
+
+    .header--nav .navlist--links:not(.navlist--links:nth-child(3)){
+            display: none;
+
+        }
+        .header--nav{
+            --header_outside_margin: 1rem;
+        }
+        .navlist--links:nth-child(3){
+            border: none;
+            
+        }
+        .header_menu{
+            --header_menu_width: 10rem;
+        }
+
+}

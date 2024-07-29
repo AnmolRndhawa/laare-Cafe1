@@ -1,0 +1,127 @@
+ /* homepage products  */
+:root {
+        --primary_white: white;
+        --creamy_white: #e4e6d9;
+        --primary_black: black;
+        --logo_color: rgb(239, 191, 56);
+        --search_focus_width: 16rem;
+        --header_outside_margin: 2rem;
+        --product_cover_transition: 0px;
+        --product_width: 25%;
+        --home_product_tag_margin: 18rem;
+    }
+
+    .product {
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0));
+        width: var(--product_width);
+        /* height: 80%; */
+        aspect-ratio: 1/1;
+        border-radius: 9px;
+        padding: 0.3rem;
+        padding-bottom: 0;
+        box-shadow: 4px 8px 20px 0 var(--primary_black);
+        margin-left: auto;
+        margin-right: auto;
+        
+        
+        
+    }
+    
+    .product_label {
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
+        color: var(--primary_white);
+        
+        
+        
+    }
+    
+    .product_details {
+        width: 100%;
+        aspect-ratio: 1/0.3;
+        transform: translate(0, -1rem);
+        font-size: 0.6em;
+        text-align: center;
+
+        color: var(--primary_white);
+    }
+
+    .product_animation {
+        background: var(--url) var(--product_cover_transition) 6px, url(images_laare_cafe/plastic-cup-model.png);
+        background-size: auto 100%;
+        width: 100%;
+        aspect-ratio: 1/1;
+        background-blend-mode: multiply;
+        mask-image: url(images_laare_cafe/plastic-cup-model.png);
+        mask-size: auto 100%;
+
+    }
+
+    .product:hover .product_animation {
+        --product_cover_transition: -40px;
+        transition: 0.5s;
+        animation: product_animate 0.5s forwards;
+    }
+
+    @keyframes product_animate {
+        from {
+            transform: translateY(0);
+            scale: 1;
+        }
+
+        to {
+            transform: translateY(-10%);
+            scale: 1.2;
+        }
+    }
+    .home_products_tag {
+        color: var(--primary_white);
+        background: transparent;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: var(--home_product_tag_margin);
+        transform: translate(0px, -20px);
+        z-index: 9999;
+    }
+     
+    /* responsive  */
+    /* responsive  */
+    @media (width<650px) {
+
+        .product {
+            top: 0.2rem;
+        }
+
+        .product_label {
+            font-size: 0.5em;
+        }
+
+        .home_products_tag {
+            font-size: 1rem;
+            left: 2rem;
+            --home_product_tag_margin:38%;
+        }
+        .product:hover .product_animation {
+            --product_cover_transition: -15px;
+        }
+        
+    }
+
+   
+    
+    @media (width>=650px) and (max-width: 1200px) {
+        .product_label {
+            font-size: 0.7em;
+        }
+        
+        .home_products_tag {
+            text-wrap: nowrap;
+            --home_product_tag_margin:54%;
+            
+        }
+        .product:hover .product_animation {
+            --product_cover_transition: -22px;
+        }
+
+    }

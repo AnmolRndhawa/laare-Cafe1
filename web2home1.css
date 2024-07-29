@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+CU:wght@100..400&display=swap');
+
+:root {
+    --primary_white: white;
+    --creamy_white: #e4e6d9;
+    --primary_black: black;
+    --logo_color: rgb(239, 191, 56);
+    --home_font_size1: 3em;
+    --home_description_font_size: 0.7em;
+    --homepage_els_margin_left: 4rem;
+    --homepage_product_wrapper_size: 50vw;
+    --rightsection_width: 50vw;
+    --rightsection_image_size: 100%;
+    --home_product-leftmargin: auto;
+    --homepage_wrap_size: 100svh;
+    --rightsec_bg_margin:-8rem;
+   
+
+}
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+* {
+    scrollbar-width: none;
+    
+
+}
+main{
+    /* background-color: yellow; */
+  width: auto;
+  height: 200svh;
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  transition: appear_animation 3s linear;
+}
+
+
+
+main *{
+    scroll-snap-align: start;
+}
+
+.place_behind-the-header {
+    height: 8svh;
+}
+
+.home-page-wrap {
+    height: var(--homepage_wrap_size);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+
+
+
+}
+
+.leftsection {
+    /* width: clamp(); */
+    display: grid;
+    grid-template-rows: 10rem 5rem 8rem;
+    align-content: center;
+    gap: 1rem;
+
+}
+
+.rightsection {
+
+    background-color: var(--primary_black);
+    background: url(images_laare_cafe/pexels-chevanon-302899.jpg) var(--rightsec_bg_margin) -8rem;
+    background-size: auto var(--rightsection_image_size);
+    background-repeat: no-repeat;
+    width: var(--rightsection_width);
+    background-size: fill;
+    overflow-y: hidden;
+
+    /* background-position: center; */
+    /* align-content: center; */
+
+}
+
+.homepage--elements {
+    margin-left: 4rem;
+    margin-left: var(--homepage_els_margin_left);
+
+}
+
+/* // heading settings on homepage */
+/* // heading settings on homepage */
+.homepage--heading {
+    user-select: none;
+    font-size: var(--home_font_size1);
+
+
+    text-align: start;
+    font-family: "Dancing Script", cursive;
+}
+
+.homepage--heading span {
+    font-family: "Dancing Script", cursive;
+    display: block;
+}
+
+.homepage--description {
+    user-select: none;
+    font-size: var(--home_description_font_size);
+    text-wrap: wrap;
+    font-weight: 600;
+    text-align: sart;
+}
+
+.homepage--description span {
+    display: block;
+}
+
+code {
+    background-color:  var(--codebg_color);
+
+
+}
+
+/* // buttons setting on homepage //  */
+/* // buttons setting on homepage //  */
+
+.homepage--btn_list {
+    display: flex;
+    gap: 3rem;
+    justify-content: start;
+
+}
+
+.homepage--btns {
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+}
+
+.homepage--btns a {
+    color: var(--primary_white);
+
+}
+
+.homepage--btns:nth-child(1) {
+    background-color: var(--mono-color);
+}
+
+.homepage--btns:nth-child(2) {
+    background-color: var(--codebg_color);
+}
+
+/* right section of homepage  */
+/* right section of homepage  */
+.home_products {
+    position: absolute;
+    background: transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* background-color: rgba(190, 190, 190, 0.2); */
+    background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.3));
+
+    background-size: 10% 30%;
+    width: var(--homepage_product_wrapper_size);
+    height: 45svh;
+    top: 50%;
+    margin-left: var(--home_product-leftmargin);
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+
+
+}
+
+/* // responsive //  */
+
+
+@media (width<650px) {
+    .home-page-wrap {
+        --homepage_wrap_size: 75svh;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+    }
+
+
+    .homepage--elements {
+        --homepage_els_margin_left: 0;
+    }
+
+    .leftsection {
+        --rightsection_width: 100%;
+        /* background-size: cover; */
+        grid-template-rows: 5rem 4rem 3rem;
+        gap: 0.3em;
+
+
+    }
+
+    .homepage--heading {
+        text-align: center;
+        --home_font_size1: 1.5em;
+    }
+
+    .homepage--description {
+        --home_description_font_size: 0.4em;
+        text-align: center;
+    }
+
+    .homepage--btn_list {
+        justify-content: center;
+    }
+
+    .rightsection {
+
+        background-position: -4rem -7rem;
+        --rightsection_width: 100vw + 0.1rem;
+        --rightsection_image_size: 200%;
+        background-position: center;
+        overflow: hidden;
+    }
+
+    .home_products {
+        --homepage_product_wrapper_size: clamp(20rem, 100vw, 100vw);
+        min-width: 20rem;
+        height: 15rem;
+
+    }
+
+}
+
+@media (width>=650px) and (width < 1200px) {
+    .rightsection{
+        --rightsec_bg_margin:-45rem;
+    }
+    
+    .homepage--heading {
+        text-align: start;
+        --home_font_size1: 3em;
+        text-wrap: nowrap;
+    }
+
+    .homepage--description {
+        --home_description_font_size: 0.6rem;
+        text-align: start;
+    }
+
+    .home_products {
+        width: 50%;
+        --homepage_product_wrapper_size: 50%;
+        top: 38rem;
+    }
+
+}

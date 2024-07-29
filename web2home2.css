@@ -82,7 +82,7 @@
         position: absolute;
         top: var(--home_product_tag_margin);
         transform: translate(0px, -20px);
-        z-index: 9999;
+        z-index: 999;
     }
      
     /* responsive  */
@@ -100,7 +100,7 @@
         .home_products_tag {
             font-size: 1rem;
             left: 2rem;
-            --home_product_tag_margin:38%;
+            --home_product_tag_margin:42%;
         }
         .product:hover .product_animation {
             --product_cover_transition: -15px;

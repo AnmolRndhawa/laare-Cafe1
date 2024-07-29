@@ -159,7 +159,7 @@ code {
     background-size: 10% 30%;
     width: var(--homepage_product_wrapper_size);
     height: 45svh;
-    top: 50%;
+    top: 60%;
     margin-left: var(--home_product-leftmargin);
     margin-right: auto;
     display: flex;
@@ -173,7 +173,7 @@ code {
 
 @media (width<650px) {
     .home-page-wrap {
-        --homepage_wrap_size: 75svh;
+        --homepage_wrap_size: 85svh;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, 1fr);
 

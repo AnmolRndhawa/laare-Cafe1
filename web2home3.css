@@ -265,7 +265,7 @@ padding: 0.3rem 1rem;
 .food_category_wrap{
       grid-template-rows: repeat(2,8rem);
       grid-auto-rows: 8rem;
-      height: 32svh;
+       height: 43svh;
 }
 .discount_img{
     border-radius: 9px;
